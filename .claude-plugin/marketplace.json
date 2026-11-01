@@ -1,0 +1,12 @@
+{
+    "name": "roasby",
+    "description": "The Roasby plugin for managing ads safely from Claude.",
+    "owner": { "name": "Anesthesia Zone, LLC", "email": "support@roasby.com" },
+    "plugins": [
+        {
+            "name": "roasby",
+            "source": "./",
+            "description": "Manage Google Ads, Microsoft Ads and ChatGPT Ads safely from Claude through the Roasby MCP server."
+        }
+    ]
+}

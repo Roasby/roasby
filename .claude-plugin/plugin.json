@@ -1,0 +1,18 @@
+{
+    "name": "roasby",
+    "version": "0.2.0",
+    "description": "Manage Google Ads, Microsoft Ads and ChatGPT Ads safely from Claude through the Roasby MCP server.",
+    "author": { "name": "Roasby", "url": "https://roasby.com" },
+    "homepage": "https://roasby.com/docs",
+    "license": "MIT",
+    "repository": "https://github.com/Roasby/roasby-claude-plugin",
+    "privacyPolicyUrl": "https://roasby.com/privacy",
+    "keywords": [
+        "ads",
+        "google-ads",
+        "microsoft-ads",
+        "chatgpt-ads",
+        "marketing",
+        "roas"
+    ]
+}
