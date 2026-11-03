@@ -1,6 +1,6 @@
 # Roasby for Claude
 
-Roasby lets you manage Google Ads, Microsoft Ads and ChatGPT Ads by talking to Claude. Ask how your campaigns are doing, find searches that waste money, and make changes after you have seen and confirmed exactly what will happen.
+Roasby lets you manage Google Ads, Microsoft Ads and ChatGPT Ads by talking to Claude. Ask how your campaigns are doing, find searches that waste money, and make changes after a preview of exactly what will happen.
 
 You need a [Roasby](https://roasby.com) account with at least one connected ad account.
 
@@ -25,7 +25,7 @@ The plugin connects only to `https://roasby.com/mcp`. It runs no local code, has
 - Everything Roasby creates starts paused.
 - Nothing is ever deleted from your ad accounts.
 - Budget and bid changes stay within guardrails that only people can set.
-- Every change is logged and can be reverted.
+- Every change is logged, and most can be reverted.
 
 ## Example prompts
 
