@@ -34,6 +34,7 @@ The plugin connects only to `https://roasby.com/mcp`. It runs no local code, has
 - A new campaign has one ad group, one ad and up to 50 keywords, and targets whole countries, and Roasby can't yet edit campaign settings, ad text, assets or schedules, or research keywords.
 - Some platforms can't do everything: for example, Microsoft Ads has no broad match negative keywords and ChatGPT Ads has no keywords.
 - Roasby answers from a synced copy of your data, refreshed on a schedule or when you ask.
+- One connection reaches every workspace you belong to. Claude works in your current workspace unless you name another, and can change ads only where your role allows it.
 
 See [every limitation by platform](https://roasby.com/docs/limitations).
 
@@ -42,6 +43,7 @@ See [every limitation by platform](https://roasby.com/docs/limitations).
 - "How did my ads do in the last 7 days?"
 - "Find wasted spend and suggest negative keywords."
 - "Pause the Brand campaign."
+- "Which workspaces can you see? Show me last week's spend in the Agency workspace."
 
 ## Support
 
