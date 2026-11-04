@@ -27,6 +27,16 @@ The plugin connects only to `https://roasby.com/mcp`. It runs no local code, has
 - Budget and bid changes stay within guardrails that only people can set.
 - Every change is logged, and most can be reverted.
 
+## Limitations
+
+- Roasby never deletes anything from your ad accounts: it pauses instead.
+- Guardrails, connecting ad platforms, billing and account settings are set by people in Roasby on the web. When only you can do something, Claude tells you what to do and where.
+- A new campaign has one ad group, one ad, up to 50 keywords and up to 25 countries, and Roasby can't yet edit campaign settings, ad text, assets or schedules, or research keywords.
+- Some platforms can't do everything: for example, Microsoft Ads has no broad match negative keywords and ChatGPT Ads has no keywords.
+- Roasby answers from a synced copy of your data, refreshed on a schedule or when you ask.
+
+See [every limitation by platform](https://roasby.com/docs/limitations).
+
 ## Example prompts
 
 - "How did my ads do in the last 7 days?"
