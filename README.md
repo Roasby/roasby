@@ -33,7 +33,7 @@ The plugin connects only to `https://roasby.com/mcp`. It runs no local code, has
 - Guardrails, connecting ad platforms, billing and account settings are set by people in Roasby on the web. When only you can do something, Claude tells you what to do and where.
 - A new search campaign is built whole from one blueprint (up to 1,000 ad groups with keywords, negative keywords and up to 3 ads each, and its own negative keywords, within 10,000 operations) and targets whole countries; a larger one is created in parts. Ad groups (with their keywords, negative keywords and up to 3 ads) can be added to an existing search campaign, and keywords and responsive search ads (with pinned headlines if you want) to an existing ad group (always paused), but Roasby can't yet edit campaign settings, ad text, assets or schedules, or research keywords.
 - Some platforms can't do everything: for example, Microsoft Ads has no broad match negative keywords and ChatGPT Ads has no keywords.
-- Roasby answers from a synced copy of your data, refreshed on a schedule or when you ask.
+- Roasby answers from a synced copy of your data, refreshed on a schedule or when you ask. Keyword Quality Scores and bid estimates are missing when the platform has too little data or (estimates) under automated bidding; Claude then says so instead of guessing.
 - One connection reaches every workspace you belong to. Claude works in your current workspace unless you name another, and can change ads only where your role allows it.
 
 See [every limitation by platform](https://roasby.com/docs/limitations).
