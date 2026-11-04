@@ -31,7 +31,7 @@ The plugin connects only to `https://roasby.com/mcp`. It runs no local code, has
 
 - Roasby never deletes anything from your ad accounts: it pauses instead.
 - Guardrails, connecting ad platforms, billing and account settings are set by people in Roasby on the web. When only you can do something, Claude tells you what to do and where.
-- A new campaign has one ad group, one ad and up to 50 keywords, and targets whole countries. Ad groups (with their keywords, negative keywords and one ad) can be added to an existing search campaign and keywords to an existing ad group (always paused), but Roasby can't yet add an ad to an existing ad group, edit campaign settings, ad text, assets or schedules, or research keywords.
+- A new campaign has one ad group, one ad and up to 50 keywords, and targets whole countries. Ad groups (with their keywords, negative keywords and one ad) can be added to an existing search campaign, and keywords and responsive search ads (with pinned headlines if you want) to an existing ad group (always paused), but Roasby can't yet edit campaign settings, ad text, assets or schedules, or research keywords.
 - Some platforms can't do everything: for example, Microsoft Ads has no broad match negative keywords and ChatGPT Ads has no keywords.
 - Roasby answers from a synced copy of your data, refreshed on a schedule or when you ask.
 - One connection reaches every workspace you belong to. Claude works in your current workspace unless you name another, and can change ads only where your role allows it.
@@ -45,6 +45,7 @@ See [every limitation by platform](https://roasby.com/docs/limitations).
 - "Pause the Brand campaign."
 - "Add these 20 keywords as phrase match to the Running shoes ad group."
 - "Add trail, road and kids ad groups to the Running shoes campaign, each with its keywords and an ad."
+- "Add a second ad to the Trail ad group, with our brand name pinned as the first headline."
 - "Which workspaces can you see? Show me last week's spend in the Agency workspace."
 
 ## Support
