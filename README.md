@@ -7,7 +7,8 @@ You need a [Roasby](https://roasby.com) account with at least one connected ad a
 Install it in Claude Code:
 
 ```
-/plugin install roasby --marketplace Roasby/roasby-claude-plugin
+/plugin marketplace add Roasby/roasby-claude-plugin
+/plugin install roasby@roasby
 ```
 
 ## What this plugin contains
