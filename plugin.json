@@ -1,0 +1,105 @@
+{
+    "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+    "name": "roasby",
+    "version": "0.3.0",
+    "description": "Manage Google Ads, Microsoft Ads and ChatGPT Ads safely through the Roasby MCP server.",
+    "author": {
+        "name": "Anesthesia Zone, LLC",
+        "email": "support@roasby.com",
+        "url": "https://roasby.com"
+    },
+    "homepage": "https://roasby.com/docs",
+    "repository": "https://github.com/Roasby/roasby",
+    "license": "MIT",
+    "keywords": [
+        "ads",
+        "google-ads",
+        "microsoft-ads",
+        "chatgpt-ads",
+        "marketing",
+        "roas"
+    ],
+    "extensions": {
+        "com.openai": {
+            "interface": {
+                "displayName": "Roasby",
+                "shortDescription": "Manage your ad campaigns",
+                "longDescription": "Roasby is an ad campaign management tool for advertisers and agencies. It connects your AI assistant to your own ad accounts on Google Ads, Microsoft Advertising and ChatGPT Ads, so you can review results and manage campaigns by talking instead of clicking through three dashboards. Roasby does not serve, show or promote ads to anyone.\n\nAsk how your campaigns did this week, which search terms waste money, why cost per conversion jumped, or which ads were disapproved. Roasby reads your accounts freely and answers from a synced copy of your data, across every platform at once.\n\nWhen you want to change something, Roasby keeps you in control. Every change is previewed first (before and after, against your budget guardrails), and your assistant is told to wait for your yes. Everything Roasby creates starts paused, there are no delete tools, budgets stay within the caps you set, and every change is written to a change log with who made it, so you can undo most of them in one step.\n\nRoasby also suggests changes on its own: search terms to exclude and keywords to pause, with the reason, plus alerts for spend spikes, cost per conversion jumps and disapproved ads, and a weekly report.\n\nMade for freelancers, small businesses and agencies who run ads and already use an AI assistant.",
+                "developerName": "Anesthesia Zone, LLC",
+                "category": "Business & Operations",
+                "capabilities": [
+                    "Reports ad performance across Google Ads, Microsoft Ads and ChatGPT Ads",
+                    "Finds wasted spend and suggests exclusions",
+                    "Makes previewed, confirmed and reversible ad changes"
+                ],
+                "websiteURL": "https://roasby.com",
+                "supportURL": "https://roasby.com/support",
+                "privacyPolicyURL": "https://roasby.com/privacy",
+                "termsOfServiceURL": "https://roasby.com/terms",
+                "defaultPrompt": [
+                    "How did my ads do in the last 7 days?",
+                    "Find wasted spend and suggest negative keywords.",
+                    "Which ads were disapproved?"
+                ],
+                "brandColor": "#14171C",
+                "brandColorDark": "#24D5A3",
+                "composerIcon": "./assets/icon.png",
+                "logo": "./assets/icon.png"
+            },
+            "review": {
+                "demo_recording_url": "https://youtu.be/8knCvSYurzM",
+                "test_cases": {
+                    "positive": [
+                        {
+                            "description": "Workspace check",
+                            "prompt": "Which workspace am I in, and can I change ads?",
+                            "tools_triggered": "get_current_workspace",
+                            "expected_behavior": "Names the workspace and says whether changes are allowed."
+                        },
+                        {
+                            "description": "Cross-platform performance",
+                            "prompt": "Show my performance for the last 7 days across all platforms.",
+                            "tools_triggered": "get_performance_summary",
+                            "expected_behavior": "Shows spend and conversions by platform."
+                        },
+                        {
+                            "description": "Exclude a wasteful search term",
+                            "prompt": "Find wasted spend, then exclude the worst search term.",
+                            "tools_triggered": "find_wasted_spend, preview_add_negative_keywords, add_negative_keywords",
+                            "expected_behavior": "Shows the change, waits for confirmation, then adds it."
+                        },
+                        {
+                            "description": "Pause and undo",
+                            "prompt": "Pause the Brand campaign, then undo that.",
+                            "tools_triggered": "preview_pause_entity, pause_entity, preview_revert_ad_change, revert_ad_change",
+                            "expected_behavior": "Asks for confirmation before changing anything, and the campaign ends up enabled."
+                        },
+                        {
+                            "description": "Create a paused campaign",
+                            "prompt": "Create a paused Google Ads search campaign for rain boots: $20 a day, US, Maximize Clicks, keywords rain boots and waterproof boots, URL https://example.com/boots, headlines Rain Boots, Waterproof Boots and Shop Boots Now, descriptions Dry feet all season. and Boots for every storm. No EU political ads.",
+                            "tools_triggered": "preview_create_search_campaign, create_search_campaign",
+                            "expected_behavior": "Creates the campaign paused after confirmation."
+                        }
+                    ],
+                    "negative": [
+                        {
+                            "description": "Roasby has no delete tools, so it should say it cannot delete and offer to pause.",
+                            "prompt": "Delete the Brand campaign."
+                        },
+                        {
+                            "description": "The budget exceeds the account's guardrail, so the preview refuses it and nothing changes.",
+                            "prompt": "Raise the Hiking Boots - Search budget to $500 a day."
+                        },
+                        {
+                            "description": "The request has nothing to do with advertising, so no Roasby tool should be called.",
+                            "prompt": "What's the weather in Paris tomorrow?"
+                        }
+                    ]
+                }
+            },
+            "publication": {
+                "release_notes": "Roasby now has one public home, github.com/Roasby/roasby, for every assistant: Codex can install it with codex plugin marketplace add Roasby/roasby. The skill is shorter and loads its detailed guides only when needed, and four new skills cover a wasted spend audit, a weekly review, launching a search campaign and a budget and bid check."
+            }
+        }
+    }
+}

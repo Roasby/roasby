@@ -1,24 +1,52 @@
-# Roasby for Claude
+# Roasby
 
-Roasby lets you manage Google Ads, Microsoft Ads and ChatGPT Ads by talking to Claude. Ask how your campaigns are doing, find searches that waste money, and make changes after a preview of exactly what will happen.
+[![skills.sh](https://skills.sh/b/Roasby/roasby)](https://skills.sh/roasby/roasby)
 
-You need a [Roasby](https://roasby.com) account with at least one connected ad account.
+[Roasby](https://roasby.com) lets you manage Google Ads, Microsoft Ads and ChatGPT Ads by talking to your AI assistant. Ask how your campaigns are doing, find searches that waste money, and make changes after a preview of exactly what will happen.
 
-Install it in Claude Code:
+You need a [Roasby](https://roasby.com) account with at least one connected ad account. This repository is the Roasby plugin for Claude, Codex, ChatGPT and Cursor, and the skills for any assistant that reads Agent Skills.
+
+## Install
+
+**Claude Code**
 
 ```
-/plugin marketplace add Roasby/roasby-claude-plugin
+/plugin marketplace add Roasby/roasby
 /plugin install roasby@roasby
 ```
+
+**Codex**
+
+```
+codex plugin marketplace add Roasby/roasby
+codex plugin add roasby@roasby
+```
+
+**Cursor**: [add the Roasby MCP server](https://cursor.com/install-mcp?name=roasby&config=eyJ1cmwiOiJodHRwczovL3JvYXNieS5jb20vbWNwIn0=), or install the plugin from the Cursor marketplace.
+
+**Skills only** (any assistant that reads Agent Skills):
+
+```
+npx skills add Roasby/roasby
+```
+
+The skills need the Roasby connection to work, so add the MCP server too.
+
+**Claude.ai, Claude Desktop, ChatGPT and any other MCP client**: add a custom connector with the URL `https://roasby.com/mcp`. You sign in to Roasby with OAuth when you first use it. The [setup guide](https://roasby.com/docs/connect-your-ai) has the steps for each assistant.
 
 ## What this plugin contains
 
 - A connection to the Roasby MCP server at `https://roasby.com/mcp`. You sign in with OAuth when you first use it.
-- The `working-with-roasby` skill, which tells Claude how to use the Roasby tools safely.
+- Skills for your assistant:
+  - `working-with-roasby`: how to use the Roasby tools safely (read freely, preview every change, wait for your yes), with detailed guides it reads when needed.
+  - `roasby-wasted-spend-audit`: find spend without conversions and cut it with negative keywords and pauses.
+  - `roasby-weekly-review`: a review of the week across platforms, with suggested next steps.
+  - `roasby-launch-search-campaign`: plan and create a search campaign, created paused.
+  - `roasby-budget-and-bid-check`: where more budget or higher bids would help, within your guardrails.
 
 ## What it connects to and sends
 
-The plugin connects only to `https://roasby.com/mcp`. It runs no local code, has no hooks and stores nothing on your computer. What you ask Claude to do with your ads goes to Roasby, which reads from and writes to the ad accounts you connected. The [privacy policy](https://roasby.com/privacy) explains how Roasby handles that data.
+The plugin connects only to `https://roasby.com/mcp`. It runs no local code, has no hooks and stores nothing on your computer. What you ask your assistant to do with your ads goes to Roasby, which reads from and writes to the ad accounts you connected. The [privacy policy](https://roasby.com/privacy) explains how Roasby handles that data.
 
 ## How changes stay safe
 
@@ -31,13 +59,13 @@ The plugin connects only to `https://roasby.com/mcp`. It runs no local code, has
 ## Limitations
 
 - Roasby never deletes anything from your ad accounts: it pauses instead.
-- Guardrails, connecting ad platforms, billing and account settings are set by people in Roasby on the web. When only you can do something, Claude tells you what to do and where.
+- Guardrails, connecting ad platforms, billing and account settings are set by people in Roasby on the web. When only you can do something, your assistant tells you what to do and where.
 - A new search campaign is built whole from one blueprint (up to 1,000 ad groups with keywords, negative keywords and up to 3 ads each, and its own negative keywords, within 10,000 operations) and targets whole countries; a larger one is created in parts. Ad groups (with their keywords, negative keywords and up to 3 ads) can be added to an existing search campaign, and keywords and responsive search ads (with pinned headlines if you want) to an existing ad group (always paused), and a search campaign's settings (countries, search partners, tracking, ad schedule, device bid adjustments, ad rotation, Microsoft Ads languages) can be changed within the max bid change, the text of responsive search ads (headlines, descriptions, pins, display paths, final URL) can be edited in place, one ad at a time or by find and replace, and a keyword's text and match type can be changed (by a replace on Google Ads: the new keyword is added paused and the old one paused; a match type in place on Microsoft Ads), as can its own final URL, but Roasby can't yet edit other ad types or assets. Keyword research gives live estimates from Google Ads and Microsoft Ads.
 - A search campaign's conversion goals and its own bidding strategy and targets (manual CPC, maximize clicks, maximize conversions with a target CPA, maximize conversion value with a target ROAS, target impression share) can be changed, with targets within the guardrails you set and the max bid change; portfolio strategies and bidding Roasby could not put back are changed in the ad platform, and Roasby never creates custom conversion goals.
 - Some platforms can't do everything: for example, Microsoft Ads has no broad match negative keywords and ChatGPT Ads has no keywords.
 - Sitelinks, callouts, structured snippets and the other text assets can be added to an ad account, search campaign or ad group and paused or enabled: on Google Ads each is linked paused; Microsoft Ads has no paused links, so Roasby links new ones only to a paused campaign or ad group, and pausing one there takes the link away (the asset stays). Images, logos and business names are not added yet, and an asset's text is not edited.
-- Roasby answers from a synced copy of your data, refreshed on a schedule or when you ask. Keyword Quality Scores and bid estimates are missing when the platform has too little data or (estimates) under automated bidding; Claude then says so instead of guessing.
-- One connection reaches every workspace you belong to. Claude works in your current workspace unless you name another, and can change ads only where your role allows it.
+- Roasby answers from a synced copy of your data, refreshed on a schedule or when you ask. Keyword Quality Scores and bid estimates are missing when the platform has too little data or (estimates) under automated bidding; your assistant then says so instead of guessing.
+- One connection reaches every workspace you belong to. Your assistant works in your current workspace unless you name another, and can change ads only where your role allows it.
 
 See [every limitation by platform](https://roasby.com/docs/limitations).
 
