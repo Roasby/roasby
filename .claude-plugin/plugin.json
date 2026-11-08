@@ -1,6 +1,6 @@
 {
     "name": "roasby",
-    "version": "0.2.26",
+    "version": "0.2.27",
     "description": "Manage Google Ads, Microsoft Ads and ChatGPT Ads safely from Claude through the Roasby MCP server.",
     "author": { "name": "Roasby", "url": "https://roasby.com" },
     "homepage": "https://roasby.com",
