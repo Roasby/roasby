@@ -1,11 +1,11 @@
 ---
 name: working-with-roasby
-description: "Use when the user asks about their Google Ads, Microsoft Ads or ChatGPT Ads accounts, ad performance, wasted spend or campaign changes, and wants to work through Roasby or has the Roasby tools. Explains how to work safely with Roasby: read freely, preview every change, get explicit confirmation, then write with the preview's confirmation token."
+description: "Use when the user asks about their Google Ads, Microsoft Ads, ChatGPT Ads or Meta Ads accounts, ad performance, wasted spend or campaign changes, and wants to work through Roasby or has the Roasby tools. Explains how to work safely with Roasby: read freely, preview every change, get explicit confirmation, then write with the preview's confirmation token."
 ---
 
 # Working with Roasby
 
-[Roasby](https://roasby.com) connects you to the user's ad accounts (Google Ads, Microsoft Ads, ChatGPT Ads) through MCP tools. You read freely; every change is previewed, confirmed by the user, logged, and revertible in most cases.
+[Roasby](https://roasby.com) connects you to the user's ad accounts (Google Ads, Microsoft Ads, ChatGPT Ads, Meta Ads) through MCP tools. You read freely; every change is previewed, confirmed by the user, logged, and revertible in most cases.
 
 ## Not connected yet?
 

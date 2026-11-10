@@ -1,5 +1,9 @@
 # Budgets and bids
 
+## Meta Ads budgets
+
+A Meta Ads budget lives on the campaign (Advantage campaign budget) or on each ad set. `preview_update_campaign_budget` takes `campaign_id` for a campaign budget or `ad_group_id` for an ad set's own daily budget (exactly one): `budget_on_campaign` means the ad set's campaign holds the budget, `budget_on_ad_groups` that its ad sets do, and `lifetime_budget` that it has a lifetime budget Roasby does not change. Meta allows 4 budget changes per ad set an hour (`too_many_for_platform`) and one edit of a campaign, ad set or ad every 30 seconds (`too_soon`). Amounts are micros of the account currency, in Meta's steps (cents, or whole units for currencies such as the yen; `amount_too_precise` otherwise). The max daily budget holds for a campaign's day: the sum of its enabled ad set budgets. An ad set takes a bid only when it bids with a bid cap (`bids_adjustable`).
+
 ## Impression share
 
 Before suggesting a budget or bid change for a search campaign, read its `impression_share` in `get_campaign_performance` (or `list_ad_entities` with a `period`, for campaigns and ad groups): the share of eligible search impressions it got, `lost_to_rank` (bid, ad quality, competition) and `lost_to_budget` (the daily budget ran out; Google Ads reports it for campaigns only, so read a Google Ads ad group's budget loss on its campaign), plus `top` and `absolute_top`. Tell the user whether it is limited by budget or by rank: a higher budget helps a campaign that loses impressions to budget and converts; one that loses them to rank needs better bids, ads or keywords. Quote each `label` as given: "<10%" and ">90%" are bounds the platform reports instead of a number, "≤" and "≥" mark a period with such days, "Not enough data" means none. Never turn a bound into an exact number. Only search campaigns have it.

@@ -1,6 +1,6 @@
 ---
 name: roasby-budget-and-bid-check
-description: "Use when the user asks whether to raise or lower budgets or bids on Google Ads or Microsoft Ads through Roasby: impression share lost to budget or rank, keyword Quality Score and first page bid estimates, budget raise recommendations, and bid changes within the guardrails."
+description: "Use when the user asks whether to raise or lower budgets or bids on Google Ads, Microsoft Ads or Meta Ads through Roasby: impression share lost to budget or rank, keyword Quality Score and first page bid estimates, budget raise recommendations, and bid changes within the guardrails."
 ---
 
 # Budget and bid check

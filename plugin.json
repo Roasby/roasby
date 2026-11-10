@@ -1,8 +1,8 @@
 {
     "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
     "name": "roasby",
-    "version": "0.3.0",
-    "description": "Manage Google Ads, Microsoft Ads and ChatGPT Ads safely through the Roasby MCP server.",
+    "version": "0.4.0",
+    "description": "Manage Google Ads, Microsoft Ads, ChatGPT Ads and Meta Ads safely through the Roasby MCP server.",
     "author": {
         "name": "Anesthesia Zone, LLC",
         "email": "support@roasby.com",
@@ -16,6 +16,7 @@
         "google-ads",
         "microsoft-ads",
         "chatgpt-ads",
+        "meta-ads",
         "marketing",
         "roas"
     ],
@@ -24,11 +25,11 @@
             "interface": {
                 "displayName": "Roasby",
                 "shortDescription": "Manage your ad campaigns",
-                "longDescription": "Roasby is an ad campaign management tool for advertisers and agencies. It connects your AI assistant to your own ad accounts on Google Ads, Microsoft Advertising and ChatGPT Ads, so you can review results and manage campaigns by talking instead of clicking through three dashboards. Roasby does not serve, show or promote ads to anyone.\n\nAsk how your campaigns did this week, which search terms waste money, why cost per conversion jumped, or which ads were disapproved. Roasby reads your accounts freely and answers from a synced copy of your data, across every platform at once.\n\nWhen you want to change something, Roasby keeps you in control. Every change is previewed first (before and after, against your budget guardrails), and your assistant is told to wait for your yes. Everything Roasby creates starts paused, there are no delete tools, budgets stay within the caps you set, and every change is written to a change log with who made it, so you can undo most of them in one step.\n\nRoasby also suggests changes on its own: search terms to exclude and keywords to pause, with the reason, plus alerts for spend spikes, cost per conversion jumps and disapproved ads, and a weekly report.\n\nMade for freelancers, small businesses and agencies who run ads and already use an AI assistant.",
+                "longDescription": "Roasby is an ad campaign management tool for advertisers and agencies. It connects your AI assistant to your own ad accounts on Google Ads, Microsoft Advertising, ChatGPT Ads and Meta Ads (Facebook and Instagram), so you can review results and manage campaigns by talking instead of clicking through four dashboards. Roasby does not serve, show or promote ads to anyone.\n\nAsk how your campaigns did this week, which search terms waste money, why cost per conversion jumped, or which ads were disapproved. Roasby reads your accounts freely and answers from a synced copy of your data, across every platform at once.\n\nWhen you want to change something, Roasby keeps you in control. Every change is previewed first (before and after, against your budget guardrails), and your assistant is told to wait for your yes. Everything Roasby creates starts paused, there are no delete tools, budgets stay within the caps you set, and every change is written to a change log with who made it, so you can undo most of them in one step.\n\nRoasby also suggests changes on its own: search terms to exclude and keywords to pause, with the reason, plus alerts for spend spikes, cost per conversion jumps and disapproved ads, and a weekly report.\n\nMade for freelancers, small businesses and agencies who run ads and already use an AI assistant.",
                 "developerName": "Anesthesia Zone, LLC",
                 "category": "Business & Operations",
                 "capabilities": [
-                    "Reports ad performance across Google Ads, Microsoft Ads and ChatGPT Ads",
+                    "Reports ad performance across Google, Microsoft, ChatGPT and Meta Ads",
                     "Finds wasted spend and suggests exclusions",
                     "Makes previewed, confirmed and reversible ad changes"
                 ],
@@ -98,7 +99,7 @@
                 }
             },
             "publication": {
-                "release_notes": "Roasby now has one public home, github.com/Roasby/roasby, for every assistant: Codex can install it with codex plugin marketplace add Roasby/roasby. The skill is shorter and loads its detailed guides only when needed, and four new skills cover a wasted spend audit, a weekly review, launching a search campaign and a budget and bid check."
+                "release_notes": "Meta Ads (Facebook and Instagram) joins Google Ads, Microsoft Ads and ChatGPT Ads: read its campaigns, ad sets and ads, pause and enable them, change campaign and ad set budgets, and create paused Traffic and Sales campaigns with preview_create_meta_campaign and create_meta_campaign. Meta downloads images and videos from their links; Roasby never uploads them."
             }
         }
     }

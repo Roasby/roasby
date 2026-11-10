@@ -1,6 +1,6 @@
 ---
 name: roasby-weekly-review
-description: "Use when the user wants a weekly or periodic review of their Google Ads, Microsoft Ads or ChatGPT Ads performance through Roasby: spend, conversions and ROAS across platforms, the campaigns that moved, alerts, and suggested next steps."
+description: "Use when the user wants a weekly or periodic review of their Google Ads, Microsoft Ads, ChatGPT Ads or Meta Ads performance through Roasby: spend, conversions and ROAS across platforms, the campaigns that moved, alerts, and suggested next steps."
 ---
 
 # Weekly ads review

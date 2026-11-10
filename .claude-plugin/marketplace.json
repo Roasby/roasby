@@ -6,7 +6,7 @@
         {
             "name": "roasby",
             "source": "./",
-            "description": "Manage Google Ads, Microsoft Ads and ChatGPT Ads safely from Claude through the Roasby MCP server."
+            "description": "Manage Google Ads, Microsoft Ads, ChatGPT Ads and Meta Ads safely from Claude through the Roasby MCP server."
         }
     ]
 }

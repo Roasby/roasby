@@ -1,6 +1,6 @@
 ---
 name: roasby-wasted-spend-audit
-description: "Use when the user wants to find and cut wasted ad spend on Google Ads, Microsoft Ads or ChatGPT Ads through Roasby: search terms and keywords that cost money without conversions, negative keywords to add, keywords to pause, and Roasby's open recommendations."
+description: "Use when the user wants to find and cut wasted ad spend on Google Ads, Microsoft Ads, ChatGPT Ads or Meta Ads through Roasby: search terms and keywords that cost money without conversions, negative keywords to add, keywords to pause, and Roasby's open recommendations."
 ---
 
 # Wasted spend audit

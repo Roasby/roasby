@@ -1,6 +1,6 @@
 ---
 name: roasby-launch-search-campaign
-description: "Use when the user wants to plan and create a new Google Ads or Microsoft Ads search campaign (or a ChatGPT Ads campaign) through Roasby: keyword research, ad groups, ads, budget, bidding and targeting, created paused after one preview and confirmation."
+description: "Use when the user wants to plan and create a new Google Ads or Microsoft Ads search campaign (or a ChatGPT Ads or Meta Ads campaign) through Roasby: keyword research, ad groups, ads, budget, bidding and targeting, created paused after one preview and confirmation."
 ---
 
 # Launch a search campaign
@@ -17,7 +17,7 @@ Plans a complete search campaign with the user and creates it paused in one conf
 6. After the user confirms, call `create_search_campaign` with the same arguments and the token. The campaign is created paused, with its ad groups, keywords and ads ready under it. Follow it in `list_ad_changes` (with `campaign_id`) until it is applied; Roasby syncs the new campaign by itself within a few minutes.
 7. Offer to start it: enabling the campaign with `preview_enable_entity` and one more confirmation starts it.
 
-For a ChatGPT Ads campaign, use `preview_create_chat_campaign` and `create_chat_campaign` instead (no keywords there). For a large campaign, create part of its ad groups and add the rest with `preview_add_ad_groups`. When the user has a file (a Google Ads Editor export, a spreadsheet), read it yourself and fill the blueprint from it. The `working-with-roasby` skill's guide "Creating campaigns" has every rule.
+For a ChatGPT Ads campaign, use `preview_create_chat_campaign` and `create_chat_campaign` instead (no keywords there); for a Meta Ads campaign, `preview_create_meta_campaign` and `create_meta_campaign` (no keywords either; see the creating campaigns guide). For a large campaign, create part of its ad groups and add the rest with `preview_add_ad_groups`. When the user has a file (a Google Ads Editor export, a spreadsheet), read it yourself and fill the blueprint from it. The `working-with-roasby` skill's guide "Creating campaigns" has every rule.
 
 ## Safety
 

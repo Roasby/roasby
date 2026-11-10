@@ -2,8 +2,8 @@
     "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
     "name": "com.roasby/roasby",
     "title": "Roasby",
-    "description": "Manage Google Ads, Microsoft Ads and ChatGPT Ads safely: previewed, logged, revertible changes.",
-    "version": "0.3.0",
+    "description": "Manage Google, Microsoft, ChatGPT and Meta Ads safely: previewed, logged, revertible changes.",
+    "version": "0.4.0",
     "websiteUrl": "https://roasby.com",
     "repository": {
         "url": "https://github.com/Roasby/roasby",

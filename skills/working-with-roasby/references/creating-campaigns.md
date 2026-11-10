@@ -31,3 +31,17 @@ becomes (money in micros, match types in lower case, one ad group per `Ad group`
 ```
 
 Add the settings the file does not hold (account, daily budget, bidding, countries, the EU question) by asking the user. Paused or removed rows in the file are still created paused or not at all: ask which ones the user wants. Show every line of the preview's `details` before confirming. The account needs a max daily budget set by people in Roasby. On Microsoft Ads, political ads are refused, manual bidding becomes enhanced cost per click (the preview says so), and negative keywords are exact or phrase only. On ChatGPT Ads, use `create_chat_campaign` instead (no keywords there): ask for the account, name, daily budget, bidding (a max cost per click or maximize clicks), countries (optional), context hints (the topics of the conversations the ads fit), the chat card's title and text, the final URL and an https image link.
+
+## Meta Ads campaigns
+
+On Meta Ads (Facebook and Instagram), use `preview_create_meta_campaign` and `create_meta_campaign`: one preview and one confirmation for the whole campaign. Ask the user for:
+- the account, the name and a daily budget (on the campaign: Meta spreads it over the ad set);
+- the objective: `traffic` (people visiting the links, optimized for link clicks) or `sales` (website conversions: `pixel_id`, the ID of one of the account's pixels in `list_conversion_actions`, and a `conversion_event` such as `purchase` or `lead`);
+- `special_ad_category`: ask whether the ads are about housing, employment, credit, or social issues, elections or politics; never assume it. Roasby creates only campaigns of `none`: such ads are made in Meta Ads Manager;
+- 1 to 25 countries, optional `age_min` and `age_max` (18 to 65) and dates;
+- `page_id`: the Facebook Page the ads run as, one of the account's `pages` in `list_ad_accounts` (read with the conversion setup; a Page added in Meta shows after the next sync);
+- when the countries include an EU country, who pays for the ads and who benefits (`dsa_payor`, `dsa_beneficiary`): both are required then (`eu_payer_required`);
+- with an end date, the campaign must run longer than 24 hours (`ad_set_too_short`);
+- 1 to 5 ads, each with `primary_text`, `headline`, an optional `description`, an https `link`, a `call_to_action` and exactly one media: `image_url` or `video_url` (with an optional `thumbnail_url`), which Meta downloads from the link (Roasby never downloads or uploads media; a link that does not load stops the campaign before anything is made), `image_hash` (an image already in the account's library) or `post_id` (an existing Page post as `pageID_postID`, which brings its own text and link, so the ad has no other field).
+
+The campaign is created paused with its ad set and ads active under it, so enabling the campaign starts them; Meta reviews the ads. A video can take a minute or two to process. If Meta made only part of it, the change fails with what exists and the campaign stays paused: tell the user what is missing. If Meta's answer was lost, the change fails as possibly made and Roasby never sends it twice: the next sync shows whether the campaign exists, so check before creating it again.
