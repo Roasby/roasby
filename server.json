@@ -3,7 +3,7 @@
     "name": "com.roasby/roasby",
     "title": "Roasby",
     "description": "Manage Google, Microsoft, ChatGPT and Meta Ads safely: previewed, logged, revertible changes.",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "websiteUrl": "https://roasby.com",
     "repository": {
         "url": "https://github.com/Roasby/roasby",
