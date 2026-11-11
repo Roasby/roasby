@@ -1,7 +1,7 @@
 {
     "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
     "name": "roasby",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "description": "Manage Google Ads, Microsoft Ads, ChatGPT Ads and Meta Ads safely through the Roasby MCP server.",
     "author": {
         "name": "Anesthesia Zone, LLC",
@@ -99,7 +99,7 @@
                 }
             },
             "publication": {
-                "release_notes": "list_ad_accounts now names each Meta Ads login's Facebook Pages (with their IDs) and each account's Roasby ID in its text, so the page_id for a new Meta campaign is easy to find; a Page the business gives Roasby later shows after connecting Meta Ads again. Meta Ads (Facebook and Instagram) joins Google Ads, Microsoft Ads and ChatGPT Ads: read its campaigns, ad sets and ads, pause and enable them, change campaign and ad set budgets, and create paused Traffic and Sales campaigns with preview_create_meta_campaign and create_meta_campaign. Meta downloads images and videos from their links; Roasby never uploads them."
+                "release_notes": "Google Ads Performance Max, display and shopping campaigns can now change their countries, location option, ad schedule, final URL suffix and tracking template (preview_update_campaign_settings), conversion goals (preview_update_conversion_goals), bidding between maximize conversions and maximize conversion value with optional targets (preview_update_bidding), and the campaign's sitelinks, callouts and other text assets (preview_add_assets). Their search terms, with cost, now show in get_search_terms and find_wasted_spend (per campaign, ad_group_id null). New: list_asset_groups, and preview_update_asset_group_texts with update_asset_group_texts to change a Performance Max asset group's headlines, long headlines and descriptions, and preview_add_asset_group_signals with add_asset_group_signals to add its search themes and audience signals."
             }
         }
     }

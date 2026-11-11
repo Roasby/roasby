@@ -63,6 +63,7 @@ Some steps are for a person, in Roasby or in an ad platform: setting or raising 
 | change a campaign's countries, schedule, devices or tracking | [Campaign settings](references/campaign-settings.md) |
 | add keywords, ad groups or ads | [Adding keywords, ad groups and ads](references/adding-keywords-ad-groups-and-ads.md) |
 | add sitelinks, callouts and other assets | [Assets](references/assets.md) |
+| read or change Performance Max asset group texts, search themes or audience signals | [Asset groups](references/asset-groups.md) |
 | edit ad text or keywords | [Editing ads and keywords](references/editing-ads-and-keywords.md) |
 | create a campaign, also from a file | [Creating campaigns](references/creating-campaigns.md) |
 
