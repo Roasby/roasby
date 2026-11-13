@@ -19,7 +19,7 @@ Workspaces: tools act in the user's current workspace in Roasby unless you pass 
 
 ## Read freely
 
-Reads need no confirmation: `list_ad_accounts`, `get_performance_summary`, `get_campaign_performance`, `get_search_terms`, `find_wasted_spend`, `list_recommendations`, `list_alerts`, `get_weekly_report`, `list_conversion_actions`, `list_ad_entities`, `list_assets` and `list_ad_changes`. Use `page` to read further when `has_more` is true. Each open recommendation in `list_recommendations` names the preview tool and arguments that approve it (`approve_with`, `approve_arguments`): show it with its explanation and approve it the usual way once the user confirms, or dismiss it with `preview_archive_recommendation`. Quote what the tools give and never invent a number: when a value is missing, say why (the tools say so). Conversion value and ROAS come only from ad accounts that report conversion value: when `conversion_value_reported` is false, show value and ROAS as n/a, never as zero.
+Reads need no confirmation: `list_ad_accounts`, `get_performance_summary`, `get_campaign_performance`, `get_search_terms`, `find_wasted_spend`, `list_recommendations`, `list_alerts`, `get_weekly_report`, `list_conversion_actions`, `list_ad_entities`, `list_assets` and `list_ad_changes`. Use `page` to read further when `has_more` is true. Each open recommendation in `list_recommendations` names the preview tool and arguments that approve it (`approve_with`, `approve_arguments`): show it with its explanation and approve it the usual way once the user confirms, or dismiss it with `preview_archive_recommendation`. A `platform` recommendation is the ad platform's own suggestion (`platform_suggestion`): without `approve_with`, tell the user to make it in the ad platform if they agree; Roasby never applies one there. Quote what the tools give and never invent a number: when a value is missing, say why (the tools say so). Conversion value and ROAS come only from ad accounts that report conversion value: when `conversion_value_reported` is false, show value and ROAS as n/a, never as zero.
 
 IDs come from the read tools: `ad_account_id` from `list_ad_accounts`, item IDs from `list_ad_entities`, `ad_change_id` from `list_ad_changes`, `recommendation_id` from `list_recommendations`. A `keyword_id` from `find_wasted_spend` is that keyword's `entity_id`. A bid can change only when `bids_adjustable` is true in `list_ad_entities`.
 
@@ -60,11 +60,11 @@ Some steps are for a person, in Roasby or in an ad platform: setting or raising 
 | understand disapproved or limited ads | [Policy review](references/policy-review.md) |
 | find keywords and search volumes | [Keyword research](references/keyword-research.md) |
 | pause or enable many items, follow a change, or revert | [Changes, batches and reverts](references/changes-and-reverts.md) |
-| change a campaign's countries, schedule, devices or tracking | [Campaign settings](references/campaign-settings.md) |
+| change a campaign's countries, schedule, devices or tracking, or a Meta ad set's targeting | [Campaign settings](references/campaign-settings.md) |
 | add keywords, ad groups or ads | [Adding keywords, ad groups and ads](references/adding-keywords-ad-groups-and-ads.md) |
 | add sitelinks, callouts and other assets | [Assets](references/assets.md) |
 | read or change Performance Max asset group texts, search themes or audience signals | [Asset groups](references/asset-groups.md) |
-| edit ad text or keywords | [Editing ads and keywords](references/editing-ads-and-keywords.md) |
+| edit ad text or keywords, or a Meta ad's text and link | [Editing ads and keywords](references/editing-ads-and-keywords.md) |
 | create a campaign, also from a file | [Creating campaigns](references/creating-campaigns.md) |
 
 For whole workflows, the skills `roasby-wasted-spend-audit`, `roasby-weekly-review`, `roasby-launch-search-campaign` and `roasby-budget-and-bid-check` give the steps. If you are unsure how something works, use `search_docs` and `get_doc`.
