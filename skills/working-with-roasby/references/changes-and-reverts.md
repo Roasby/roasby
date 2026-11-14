@@ -24,5 +24,5 @@ Roasby never deletes or archives anything in an ad account (dismissing a recomme
 
 - `preview_update_chat_ad` / `update_chat_ad` change a chat card's title (3 to 50 characters), body (at most 100) or link in place. ChatGPT Ads reviews the ad again before it shows, so say so before the user confirms.
 - `preview_update_context_hints` / `update_context_hints` replace an ad group's whole list of context hints.
-- `update_campaign_settings` sets a ChatGPT Ads campaign's countries and `platforms` (empty: all).
+- `update_campaign_settings` sets a ChatGPT Ads campaign's countries and `platforms` (empty: all; empty `countries` is every country, so say that to the user before confirming).
 - `get_campaign_performance` shows a ChatGPT Ads campaign's last 30 days by country, device and platform (`breakdowns`).
