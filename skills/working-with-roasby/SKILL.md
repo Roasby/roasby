@@ -1,6 +1,6 @@
 ---
 name: working-with-roasby
-description: "Use when the user asks about their Google Ads, Microsoft Ads, ChatGPT Ads or Meta Ads accounts, ad performance, wasted spend or campaign changes, and wants to work through Roasby or has the Roasby tools. Explains how to work safely with Roasby: read freely, preview every change, get explicit confirmation, then write with the preview's confirmation token."
+description: "Use when the user asks about their Google Ads, Microsoft Ads, ChatGPT Ads or Meta Ads accounts, ad performance, wasted spend or campaign changes, and wants to work through Roasby or has the Roasby tools. Explains how to work safely with Roasby: read freely, preview every change, get explicit confirmation, then write with the preview's confirmation token and the user's reply."
 ---
 
 # Working with Roasby
@@ -27,8 +27,10 @@ IDs come from the read tools: `ad_account_id` from `list_ad_accounts`, item IDs 
 
 1. Call the matching `preview_*` tool with the change.
 2. Show the user exactly what will change: the account, the item, the before and after labels, every line of `details`, and the guardrails.
-3. Ask them to confirm, and wait for their yes.
-4. Only then call the change tool with the same arguments and the preview's `confirmation_token` (valid for 10 minutes, once).
+3. Ask them to confirm, and end your turn to wait for their reply. Never call the change tool in the same turn as its preview.
+4. Only then call the change tool with the same arguments, the preview's `confirmation_token` (valid for 10 minutes, once) and `user_confirmation`: their reply, quoted exactly as they wrote it ("yes, go ahead").
+
+Never invent, complete or paraphrase `user_confirmation`, and never ask the user for special wording: any clear yes is enough, and the change log shows their reply with the change. When a task takes several changes (a campaign, then its sitelinks), preview every change that does not depend on another one first and show them together, so one reply confirms them all; pass that same reply with each write. A change that needs the ID of one not made yet is previewed once that one is applied.
 
 Never chain several changes without confirmation. The preview and change tools for each kind of change are in [Changes, batches and reverts](references/changes-and-reverts.md).
 
