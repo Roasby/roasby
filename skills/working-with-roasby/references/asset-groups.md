@@ -6,7 +6,7 @@ To change the texts, call `preview_update_asset_group_texts` with the `asset_gro
 
 Only one text change and one signals change per campaign run at a time (`has_pending_change`). A revert links the old texts again and unlinks the ones the change added; it is refused as changed since once the texts changed again.
 
-To guide an asset group toward the right people and searches, add signals with `preview_add_asset_group_signals`: the `asset_group_id`, search_themes (searches it should show for) and `audience_ids` (the platform IDs from the top-level `audiences` of `list_asset_groups`, for that asset group's ad account; on Microsoft Ads they are the account's audience groups). A theme the group has already is left out and nothing is taken away; `audience_not_available` means the audience is not one the account has; an asset group takes one audience signal, so a second is refused (`one_audience_per_asset_group`). Tell the user that signals guide the ad platform, they do not limit who sees the ads. After the user confirms, call `add_asset_group_signals` with the same arguments and the `confirmation_token`. A revert takes away exactly the signals the change added.
+To guide an asset group toward the right people and searches, add signals with `preview_add_asset_group_signals`: the `asset_group_id`, search_themes (searches it should show for) and `audience_ids` (the platform IDs from the top-level `audiences` of `list_asset_groups`, for that asset group's ad account; on Microsoft Ads they are the account's audience groups). A theme the group has already is left out and nothing is taken away; `audience_not_available` means the audience is not one the account has; an asset group takes one audience signal, so a second is refused (`one_audience_per_asset_group`), and at most 50 search themes, counting those it has (`too_many_search_themes`). Tell the user that signals guide the ad platform, they do not limit who sees the ads. After the user confirms, call `add_asset_group_signals` with the same arguments and the `confirmation_token`. A revert takes away exactly the signals the change added.
 
 ## Images and videos
 
@@ -22,7 +22,7 @@ Pass `slot` to see only what fits it, `kind` for images or videos, `search` for 
 
 To change an asset group's media, call `preview_update_asset_group_media` with the `asset_group_id` and the whole new list of any slot: `marketing_images`, `square_marketing_images`, `portrait_marketing_images` (Google Ads only), `logos`, `landscape_logos`, `videos`. A slot you leave out keeps its media. Each item is exactly one of:
 
-- `media_id`: the Roasby ID of an image or video from `list_media` (pick one whose `fits` has the slot);
+- `media_id`: the Roasby ID of an image or video from `list_media` (pick one whose `fits` has the slot: a library image that does not fit its slot is refused);
 - `image_url` (image slots): a public link to a JPEG, PNG, GIF or WebP image. The preview fetches and checks it (it must fit the slot's ratio and size); the write uses what the preview fetched, so call the write with the same link within the hour. Roasby uploads it to the library only after the confirmation;
 - `youtube` (videos, Google Ads): a YouTube link or the video's ID;
 - `video_url` (videos, Microsoft Ads): an https link to the video file that Microsoft downloads.
