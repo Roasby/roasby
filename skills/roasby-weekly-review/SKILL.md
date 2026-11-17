@@ -10,7 +10,7 @@ A read-only review of the last week (or 30 or 90 days) across every ad platform,
 ## Steps
 
 1. Call `get_current_workspace`, then `list_ad_accounts`: check which accounts are active and when each was last synced (`last_synced_at`, `last_sync_error`). Say so when the data is old or a sync failed.
-2. Call `get_performance_summary` for the period (7, 30 or 90 days): spend, conversions and ROAS per currency, with a row per day. Never add amounts in different currencies together. When `conversion_value_reported` is false, show value and ROAS as n/a, never as zero, and say how much spend is left out of ROAS (`cost_without_value_micros`).
+2. Call `get_performance_summary` for the period (7, 30 or 90 days): spend, conversions and ROAS per currency, with a row per day. Never add amounts in different currencies together yourself: with several currencies, `combined` already has them in one currency at each day's reference rate, approximate, so use it for the overall picture, say it is approximate, and quote exact amounts per currency from `currencies`. When `conversion_value_reported` is false, show value and ROAS as n/a, never as zero, and say how much spend is left out of ROAS (`cost_without_value_micros`).
 3. Call `get_campaign_performance` and pick out the campaigns that moved most: spend, conversions, cost per conversion, and for search campaigns `impression_share` (lost to budget or to rank). Quote labels as given; never turn a bound such as "<10%" into an exact number.
 4. Call `list_alerts` (spend spikes, cost per conversion jumps, disapproved ads, with why) and explain each one.
 5. Call `list_recommendations` and list the open ones with their explanations.
