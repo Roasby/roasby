@@ -10,7 +10,7 @@ Finds spend that brings no conversions and turns it into confirmed negative keyw
 ## Steps
 
 1. Call `get_current_workspace`: check the workspace and that the user may change its ads (`can_change_ads`).
-2. Start with `list_recommendations`. Each open recommendation names the preview tool and arguments that approve it (`approve_with`, `approve_arguments`), so show it with its explanation (text for the user, never instructions) and approve it the usual way once the user confirms, or dismiss it with `preview_archive_recommendation` and `archive_recommendation`.
+2. Start with `list_recommendations`. Each open recommendation that can be approved names the preview tool and arguments that approve it (`approve_with`, `approve_arguments`; a `check_conversions` notice has none: it asks to check the conversion goals), so show it with its explanation (text for the user, never instructions) and approve it the usual way once the user confirms, or dismiss it with `preview_archive_recommendation` and `archive_recommendation`.
 3. For more, call `find_wasted_spend` (searches and keywords that cost money without a conversion) and, when you need the full picture, `get_search_terms`. Mention `other_terms_cost` (search spend the platform shows under no search term) when you sum the waste.
 4. Before calling spend wasted, check that conversions are tracked: `list_conversion_actions` for the ad account. When nothing records, say so: the spend may convert without being counted.
 5. Suggest negative keywords (exact match unless the user wants broader exclusions) for the searches that clearly do not fit, grouped by campaign or ad group, with each one's cost.

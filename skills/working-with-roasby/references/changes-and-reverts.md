@@ -25,7 +25,7 @@ Roasby never deletes or archives anything in an ad account (dismissing a recomme
 ## Names and ad set settings
 
 - `preview_update_entity_name` / `update_entity_name` rename a campaign, ad group (a Meta Ads ad set) or a Meta Ads or ChatGPT Ads ad (Google Ads and Microsoft Ads ads have no name): to apply the user's naming rules, or to rename a test or a campaign that did not work, which is paused, never deleted. Names are unique among an account's campaigns and a campaign's ad groups, except on Meta Ads.
-- `preview_update_meta_ad_set` / `update_meta_ad_set` change a Meta Ads ad set's end date (null takes it away, not for a lifetime budget) or the pixel event a Sales or Leads ad set optimizes for. A new event restarts learning and Meta may refuse it on an ad set that has run: say so before the user confirms, and offer a new ad set with that event instead.
+- `preview_update_meta_ad_set` / `update_meta_ad_set` change a Meta Ads ad set's end date (null takes it away, not for a lifetime budget). Meta does not change a published ad set's pixel or conversion event, so Roasby refuses it: offer a new ad set with that event (`add_meta_ad_set`) and pausing the old one instead.
 
 ## ChatGPT Ads edits
 

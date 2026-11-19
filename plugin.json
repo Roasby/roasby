@@ -1,7 +1,7 @@
 {
     "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
     "name": "roasby",
-    "version": "0.22.1",
+    "version": "0.22.2",
     "description": "Manage Google Ads, Microsoft Ads, ChatGPT Ads and Meta Ads safely through the Roasby MCP server.",
     "author": {
         "name": "Anesthesia Zone, LLC",
@@ -99,7 +99,7 @@
                 }
             },
             "publication": {
-                "release_notes": "0.22.1: unknown tool arguments are refused (never ignored); list_ad_changes has before_summary; Meta Stories and Reels placement ads can be edited; list_ad_entities shows Meta ad text (meta_ad) and editable; fixes from the live run of 2026-11-18 (late conversions, Google tracking template revert, Meta ad sets under ad set budgets, Meta ad set end dates); ChatGPT Ads bids are called a target cost per click, as ChatGPT Ads aims at them as an average."
+                "release_notes": "0.22.2: a Meta carousel card edit lands on its own card when an empty object leaves another card as it is; update_meta_ad_set refuses a new conversion event, which Meta never changes on a published ad set (add a new ad set with it instead); list_alerts has conversions_above_clicks and list_recommendations check_conversions (a notice, nothing to approve) for campaigns with more conversions than clicks; list_media prints a Meta image's image_hash; a batch of new Meta ad sets shows each ad set's targeting, Page and ads; a value an item already has reads as nothing to change; a platform rate limit says how long to wait; create_chat_campaign describes its 1 to 5 ad groups and ads. 0.22.1: unknown tool arguments are refused (never ignored); list_ad_changes has before_summary; Meta Stories and Reels placement ads can be edited; list_ad_entities shows Meta ad text (meta_ad) and editable; fixes from the live run of 2026-11-18 (late conversions, Google tracking template revert, Meta ad sets under ad set budgets, Meta ad set end dates); ChatGPT Ads bids are called a target cost per click, as ChatGPT Ads aims at them as an average."
             }
         }
     }

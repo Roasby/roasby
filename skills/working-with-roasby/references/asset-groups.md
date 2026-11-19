@@ -10,7 +10,7 @@ To guide an asset group toward the right people and searches, add signals with `
 
 ## Images and videos
 
-`list_media` lists the image and video library of one Google Ads or Microsoft Ads account (`ad_account_id` is required): what the person uploaded in the ad platform, each with its Roasby ID, platform ID, size, file type, a link to see it, and `fits`, the slots its aspect ratio and size fit:
+`list_media` lists the image and video library of one Google Ads, Microsoft Ads or Meta Ads account (`ad_account_id` is required; on Meta Ads each image's platform ID is its `image_hash`, the one new Meta ads, their `vertical_image_hash` and carousel cards take): what the person uploaded in the ad platform, each with its Roasby ID, platform ID, size, file type, a link to see it, and `fits`, the slots its aspect ratio and size fit:
 
 - `marketing_image` (landscape, 1.91:1)
 - `square_marketing_image` (1:1)
