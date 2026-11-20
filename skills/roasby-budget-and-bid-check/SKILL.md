@@ -1,6 +1,6 @@
 ---
 name: roasby-budget-and-bid-check
-description: "Use when the user asks whether to raise or lower budgets or bids on Google Ads, Microsoft Ads or Meta Ads through Roasby: impression share lost to budget or rank, keyword Quality Score and first page bid estimates, budget raise recommendations, and bid changes within the guardrails."
+description: "Use when the user asks whether to raise or lower budgets or bids on Google Ads, Microsoft Ads, Meta Ads or ChatGPT Ads through Roasby: impression share lost to budget or rank, keyword Quality Score and first page bid estimates, budget raise recommendations, and bid changes within the guardrails."
 ---
 
 # Budget and bid check
@@ -15,7 +15,7 @@ Finds where more budget or higher bids would help and where they would not, and 
 4. Call `list_recommendations`: a `raise_budget` recommendation already holds a budget within the guardrails (`approve_arguments`). On Meta Ads and ChatGPT Ads it is measured by the share of the daily budget the campaign spends (`lost_budget_share_label` null). When `blocked_by` is set there is no allowed raise: explain the step in `user_actions` and never look for a way around it.
 5. For keywords, read their `insight` in `list_ad_entities` (`entity_type` `keyword`): Quality Score and its parts, first page and top of page bid estimates, `below_first_page_bid`. When a score or estimate is missing, say why from `quality_score_gap` or `estimates_gap` and never guess a number. A bid can change only when `bids_adjustable` is true.
 6. Suggest the changes with their reason. Budgets and bids are in micros (1,000,000 = 1.00 of the account currency).
-7. For the ones the user confirms: `preview_update_campaign_budget` and `update_campaign_budget` for a budget; `preview_update_bid` and `update_bid` for one bid; `preview_update_bids` and `update_bids` for several (for example the `first_page_cpc` rule with a cap). A rise past the max bid change per step is refused unless you pass `limit_to_guardrails: true`: then tell the user which bids were limited, and once applied preview exactly the `next_step` it gives. Never repeat a percent rule, which would compound.
+7. For the ones the user confirms: `preview_update_campaign_budget` and `update_campaign_budget` for a budget (a Meta Ads ad set's own budget with its `ad_group_id`; see the budgets and bids guide); `preview_update_bid` and `update_bid` for one bid; `preview_update_bids` and `update_bids` for several (for example the `first_page_cpc` rule with a cap). A rise past the max bid change per step is refused unless you pass `limit_to_guardrails: true`: then tell the user which bids were limited, and once applied preview exactly the `next_step` it gives. Never repeat a percent rule, which would compound. A ChatGPT Ads ad group switches between a target cost per click and maximize clicks with `preview_update_chat_bidding` and `update_chat_bidding`.
 
 ## Safety
 
