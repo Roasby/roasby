@@ -64,7 +64,7 @@ Some steps are for a person, in Roasby or in an ad platform: setting or raising 
 | understand disapproved or limited ads | [Policy review](references/policy-review.md) |
 | find keywords and search volumes | [Keyword research](references/keyword-research.md) |
 | pause or enable many items, follow a change, revert, rename, or change ChatGPT Ads ads, ad groups and bidding | [Changes, batches and reverts](references/changes-and-reverts.md) |
-| change a campaign's countries, schedule, devices or tracking, or a Meta ad set's targeting and audiences | [Campaign settings](references/campaign-settings.md) |
+| change a campaign's countries, excluded countries, schedule, devices or tracking, or a Meta ad set's targeting and audiences | [Campaign settings](references/campaign-settings.md) |
 | add keywords, ad groups or ads (Meta ad sets and ads are in Creating campaigns) | [Adding keywords, ad groups and ads](references/adding-keywords-ad-groups-and-ads.md) |
 | add sitelinks, callouts and other assets | [Assets](references/assets.md) |
 | read or change Performance Max asset group texts, URL options, images, logos, videos or status (`list_media`, `preview_update_asset_group`), search themes and audience signals (`preview_update_asset_group_signals`), or add an asset group (`preview_add_asset_group`) | [Asset groups](references/asset-groups.md) |
