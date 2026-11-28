@@ -1,7 +1,7 @@
 {
     "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
     "name": "roasby",
-    "version": "0.40.2",
+    "version": "0.41.0",
     "description": "Manage Google Ads, Microsoft Ads, ChatGPT Ads and Meta Ads safely through the Roasby MCP server.",
     "author": {
         "name": "Anesthesia Zone, LLC",
@@ -99,7 +99,7 @@
                 }
             },
             "publication": {
-                "release_notes": "0.40.2: the server instructions name only tools the server lists (seven names from before the tools were merged, such as create_search_campaign, now read preview_create_search_campaign), and apply_change is marked open world, as it makes the confirmed change in the user's ad platform. Every change is still a read-only preview_* tool (one per kind of change, with its own schema) followed by apply_change after the user confirms. The instructions and skills now also describe ChatGPT Ads bidding by campaign type (clicks, Reach, Conversions), Microsoft Ads assets linked to a whole account, every change that cannot be reverted, and excluded countries in the settings lists."
+                "release_notes": "0.41.0: a new read-only tool, get_google_analytics, reads the Google Analytics 4 properties a workspace connected in Roasby: the properties and the ad accounts each measures, a property's key events and custom fields, the dimensions and metrics it can report, reports with Google's filters and paging, pivot and realtime reports, and Google's newer funnel and conversion reports. The skill explains how to read its answers (freshness, thresholding, sampling, time zones, why Google Analytics and the ad platforms count conversions differently). Campaign performance and the entity list carry each campaign's Google Analytics numbers, a new alert flags campaigns whose conversions don't match Google Analytics, list_ad_changes can add what happened before and after each change (include_impact), and a new skill, roasby-measure-results, checks what the ads and the changes really brought."
             }
         }
     }

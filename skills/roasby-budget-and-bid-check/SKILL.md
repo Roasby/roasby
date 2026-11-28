@@ -17,6 +17,10 @@ Finds where more budget or higher bids would help and where they would not, and 
 6. Suggest the changes with their reason. Budgets and bids are in micros (1,000,000 = 1.00 of the account currency).
 7. For the ones the user confirms: `preview_update_campaign_budget` and `apply_change` for a budget (a Meta Ads ad set's own budget with its `ad_group_id`; see the budgets and bids guide); `preview_update_bids` (`bids`: one or more `{entity_id, cpc_bid_micros}`) and `apply_change` for bids, one or several (for example the `first_page_cpc` rule with a cap). A rise past the max bid change per step is refused unless you pass `limit_to_guardrails: true`: then tell the user which bids were limited, and once applied preview exactly the `bid_next_step` it gives. Never repeat a percent rule, which would compound. An ad group of a ChatGPT Ads clicks campaign switches between a target cost per click and maximize clicks with `preview_update_bidding` (its `ad_group_id`, `bidding_strategy` and, for `manual_cpc`, `cpc_bid_micros`) and `apply_change`; a Reach or Conversions campaign's ad group is refused (`chat_bid_not_on_campaign`).
 
+## With Google Analytics
+
+Before suggesting a higher budget or bid, and when the workspace connected Google Analytics, check that the campaign's `analytics` in `get_campaign_performance` agrees: its visits engage and bring key events (and revenue, when the site sends it). A campaign whose ad platform conversions Google Analytics doesn't see (an `analytics_conversion_gap` alert) should get its tracking fixed before more budget.
+
 ## Safety
 
 If the Roasby tools are not available, tell the user to add the Roasby MCP server at `https://roasby.com/mcp` and sign in to [Roasby](https://roasby.com) when asked; the setup for each assistant is at https://roasby.com/docs/connect-your-ai.

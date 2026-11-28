@@ -70,5 +70,6 @@ Some steps are for a person, in Roasby or in an ad platform: setting or raising 
 | read or change Performance Max asset group texts, URL options, images, logos, videos or status (`list_media`, `preview_update_asset_group`), search themes and audience signals (`preview_update_asset_group_signals`), or add an asset group (`preview_add_asset_group`) | [Asset groups](references/asset-groups.md) |
 | edit ad text or keywords, or a Meta ad's text and link | [Editing ads and keywords](references/editing-ads-and-keywords.md) |
 | create a campaign, also from a file | [Creating campaigns](references/creating-campaigns.md) |
+| read the website's Google Analytics (visits, engagement, key events, revenue) with `get_google_analytics`, when the workspace connected it | [Google Analytics](references/google-analytics.md) |
 
-For whole workflows, the skills `roasby-wasted-spend-audit`, `roasby-weekly-review`, `roasby-launch-search-campaign` and `roasby-budget-and-bid-check` give the steps. If you are unsure how something works, use `search_docs` and `get_doc`.
+For whole workflows, the skills `roasby-wasted-spend-audit`, `roasby-weekly-review`, `roasby-launch-search-campaign`, `roasby-budget-and-bid-check` and `roasby-measure-results` (what the ads and changes brought, with Google Analytics) give the steps. If you are unsure how something works, use `search_docs` and `get_doc`.

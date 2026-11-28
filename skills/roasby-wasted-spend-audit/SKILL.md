@@ -18,6 +18,10 @@ Finds spend that brings no conversions and turns it into confirmed negative keyw
 7. Suggest pausing keywords that waste money with `preview_pause_entities` (their `entity_ids`, one or several of one ad account), and pause the ones the user confirms. On Meta Ads and ChatGPT Ads, which have no keywords, the recommendations suggest pausing ads instead (pause ad: spent without a conversion; pause tired ad: a Meta ad people saw often while its click-through rate fell).
 8. Summarize what changed and what it cost before. Every change is in `list_ad_changes`, and adding negative keywords can be reverted (`preview_revert_ad_change`), which takes away only the ones that change added.
 
+## With Google Analytics
+
+When the workspace connected Google Analytics, spend can also be wasted on visits that never engage: in `get_campaign_performance`, a campaign whose `analytics.engagement_rate` is far below the others, or whose visits bring no key events, is worth a look even when the ad platform counts conversions. Check the landing pages with `get_google_analytics` (`part: report`, `landingPage` with `engagedSessions` and `keyEvents`) before suggesting a pause.
+
 ## Safety
 
 If the Roasby tools are not available, tell the user to add the Roasby MCP server at `https://roasby.com/mcp` and sign in to [Roasby](https://roasby.com) when asked; the setup for each assistant is at https://roasby.com/docs/connect-your-ai.

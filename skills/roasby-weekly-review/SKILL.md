@@ -14,8 +14,9 @@ A read-only review of the last week (or 30 or 90 days) across every ad platform,
 3. Call `get_campaign_performance` and pick out the campaigns that moved most: spend, conversions, cost per conversion, and for search campaigns `impression_share` (lost to budget or to rank). Quote labels as given; never turn a bound such as "<10%" into an exact number. On Meta Ads, conversions are each ad set's results for the event it optimizes for: name that event. When a campaign moved and `list_ad_changes` shows no change through Roasby, check `list_platform_changes` for changes made in the ad platform.
 4. Call `list_alerts` (spend spikes, cost per conversion jumps, disapproved ads, with why) and explain each one.
 5. Call `list_recommendations` and list the open ones with their explanations.
-6. `get_weekly_report` gives the report members got by email, with the numbers it was sent with; use `get_performance_summary` for current numbers.
-7. Write the review: totals per currency and platform, the campaigns to look at, the alerts, and three to five suggested next steps. Make no change until the user picks one; then follow the preview, confirm and write steps for it.
+6. When the workspace connected Google Analytics (`get_google_analytics` lists its `properties`), add what Google Analytics saw: each campaign's `analytics` in `get_campaign_performance` (sessions, `engagement_rate`, key events), the site's traffic by channel (`part: report` with `dimensions: ["sessionDefaultChannelGroup"]`) and any `analytics_conversion_gap` alert. The two never count conversions the same way; say so.
+7. `get_weekly_report` gives the report members got by email, with the numbers it was sent with; use `get_performance_summary` for current numbers.
+8. Write the review: totals per currency and platform, the campaigns to look at, the alerts, and three to five suggested next steps. Make no change until the user picks one; then follow the preview, confirm and write steps for it.
 
 ## Safety
 

@@ -41,6 +41,7 @@ The skills need the Roasby connection to work, so add the MCP server too.
   - `working-with-roasby`: how to use the Roasby tools safely (read freely, preview every change, wait for your yes), with detailed guides it reads when needed.
   - `roasby-wasted-spend-audit`: find spend without conversions and cut it with negative keywords and pauses.
   - `roasby-weekly-review`: a review of the week across platforms, with suggested next steps.
+  - `roasby-measure-results`: what the ads and the changes really brought, with Google Analytics: the tracking check, visit quality and what happened after each change.
   - `roasby-launch-search-campaign`: plan and create a search campaign, created paused.
   - `roasby-budget-and-bid-check`: where more budget or higher bids would help, within your guardrails.
 
