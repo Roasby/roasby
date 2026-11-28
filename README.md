@@ -42,6 +42,7 @@ The skills need the Roasby connection to work, so add the MCP server too.
   - `roasby-wasted-spend-audit`: find spend without conversions and cut it with negative keywords and pauses.
   - `roasby-weekly-review`: a review of the week across platforms, with suggested next steps.
   - `roasby-measure-results`: what the ads and the changes really brought, with Google Analytics: the tracking check, visit quality and what happened after each change.
+  - `roasby-paid-vs-organic`: paid search next to the site's organic Google results, with Search Console: where you may pay for clicks you get for free, organic demand without ads, the branded split and landing pages Google has not indexed.
   - `roasby-launch-search-campaign`: plan and create a search campaign, created paused.
   - `roasby-budget-and-bid-check`: where more budget or higher bids would help, within your guardrails.
 

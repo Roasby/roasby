@@ -15,8 +15,9 @@ A read-only review of the last week (or 30 or 90 days) across every ad platform,
 4. Call `list_alerts` (spend spikes, cost per conversion jumps, disapproved ads, with why) and explain each one.
 5. Call `list_recommendations` and list the open ones with their explanations.
 6. When the workspace connected Google Analytics (`get_google_analytics` lists its `properties`), add what Google Analytics saw: each campaign's `analytics` in `get_campaign_performance` (sessions, `engagement_rate`, key events), the site's traffic by channel (`part: report` with `dimensions: ["sessionDefaultChannelGroup"]`) and any `analytics_conversion_gap` alert. The two never count conversions the same way; say so.
-7. `get_weekly_report` gives the report members got by email, with the numbers it was sent with; use `get_performance_summary` for current numbers.
-8. Write the review: totals per currency and platform, the campaigns to look at, the alerts, and three to five suggested next steps. Make no change until the user picks one; then follow the preview, confirm and write steps for it.
+7. When the workspace connected Search Console (`get_search_console` lists its `sites`), add the organic trend for the linked sites: `part: performance` without dimensions for this period and the one before (ending 3 days ago, as Search Console lags), clicks, impressions and average position, plus the branded share (`dimensions: ["brandedClassification"]`). Say that organic numbers lag 2 to 3 days and are in Pacific Time.
+8. `get_weekly_report` gives the report members got by email, with the numbers it was sent with; use `get_performance_summary` for current numbers.
+9. Write the review: totals per currency and platform, the campaigns to look at, the alerts, and three to five suggested next steps. Make no change until the user picks one; then follow the preview, confirm and write steps for it.
 
 ## Safety
 

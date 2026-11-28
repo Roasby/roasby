@@ -23,6 +23,10 @@ For a Performance Max campaign (Google Ads or Microsoft Ads), use `preview_creat
 
 When the workspace connected Google Analytics, check before the launch that the landing page gets visits and has the key events the campaign should bring (`get_google_analytics` with `part: properties` and the property's `key_events`, then a `report` on `landingPage`). For Microsoft Ads and ChatGPT Ads campaigns, tell the user that UTM tags on the links let Google Analytics tell their visits apart.
 
+## With Search Console
+
+When the workspace connected Search Console, check before the launch how the site already does organically for the planned keywords: `get_search_console` `part: performance` with `dimensions: ["query"]` for the last 28 days ending 3 days ago. Keywords where the site already ranks 1 to 3 may need a lower budget; searches with many organic impressions but a low position are good paid candidates. Check that the landing page is indexed and not blocked (`part: inspect` with the final URL: a `noindex` or a robots.txt block is worth telling the user, though the ad still works). Search Console is read only: fixes happen in Search Console or on the site.
+
 ## Safety
 
 If the Roasby tools are not available, tell the user to add the Roasby MCP server at `https://roasby.com/mcp` and sign in to [Roasby](https://roasby.com) when asked; the setup for each assistant is at https://roasby.com/docs/connect-your-ai.

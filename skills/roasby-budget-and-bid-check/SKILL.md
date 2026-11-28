@@ -21,6 +21,10 @@ Finds where more budget or higher bids would help and where they would not, and 
 
 Before suggesting a higher budget or bid, and when the workspace connected Google Analytics, check that the campaign's `analytics` in `get_campaign_performance` agrees: its visits engage and bring key events (and revenue, when the site sends it). A campaign whose ad platform conversions Google Analytics doesn't see (an `analytics_conversion_gap` alert) should get its tracking fixed before more budget.
 
+## With Search Console
+
+When the workspace connected Search Console, read the organic position of the searches a campaign bids on before raising a bid (`get_search_console` `part: performance`, `dimensions: ["query"]`, ending 3 days ago). On brand searches where the site ranks first organically, a higher bid buys mostly clicks it would partly get anyway: say so, and leave the decision to the user (brand ads also defend against competitors). Non-brand searches where the site ranks beyond 10 depend on the ads.
+
 ## Safety
 
 If the Roasby tools are not available, tell the user to add the Roasby MCP server at `https://roasby.com/mcp` and sign in to [Roasby](https://roasby.com) when asked; the setup for each assistant is at https://roasby.com/docs/connect-your-ai.

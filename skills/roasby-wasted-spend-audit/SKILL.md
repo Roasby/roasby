@@ -22,6 +22,10 @@ Finds spend that brings no conversions and turns it into confirmed negative keyw
 
 When the workspace connected Google Analytics, spend can also be wasted on visits that never engage: in `get_campaign_performance`, a campaign whose `analytics.engagement_rate` is far below the others, or whose visits bring no key events, is worth a look even when the ad platform counts conversions. Check the landing pages with `get_google_analytics` (`part: report`, `landingPage` with `engagedSessions` and `keyEvents`) before suggesting a pause.
 
+## With Search Console
+
+When the workspace connected Search Console (`get_search_console` lists its `sites`), some paid clicks may come from searches the site already ranks for organically. Compare the costly search terms with `get_search_console` `part: performance` (`dimensions: ["query"]`, the same dates ending 3 days ago): a paid search where the site ranks 1 to 3 organically is a **savings test**, not waste: brand searches usually keep their ads, and for others suggest a lower bid or pausing one exact keyword for 2 to 4 weeks, then compare paid plus organic clicks and conversions. The `roasby-paid-vs-organic` skill has the full method.
+
 ## Safety
 
 If the Roasby tools are not available, tell the user to add the Roasby MCP server at `https://roasby.com/mcp` and sign in to [Roasby](https://roasby.com) when asked; the setup for each assistant is at https://roasby.com/docs/connect-your-ai.
